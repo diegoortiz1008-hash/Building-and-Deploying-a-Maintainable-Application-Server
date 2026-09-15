@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AREP · Mini aplicación</title>
+  <link rel="icon" type="image/png" href="/logo.png">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 32px auto; padding: 0 16px; }
+    section { border: 1px solid #ddd; border-radius: 8px; padding: 12px 16px; margin: 16px 0; }
+    h2 { margin-top: 0; font-size: 1.1rem; }
+    input, button { font-size: 1rem; padding: 6px 10px; }
+    .box { margin-top: 16px; padding: 12px 16px; border-radius: 8px; background: #eef; min-height: 1.2em; }
+    .box.error { background: #fdd; color: #900; }
+    img { border: 1px solid #ccc; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Mini aplicación AREP</h1>
+  <img src="/logo.png" alt="Logo servido por el servidor Java" width="200" height="100">
+
+  <section>
+    <h2>Saludo</h2>
+    <form id="form-hello">
+      <input id="name" type="text" placeholder="Tu nombre" autocomplete="off">
+      <button type="submit">Saludar</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Cuadrado</h2>
+    <form id="form-square">
+      <input id="number" type="number" step="any" placeholder="Un número">
+      <button type="submit">Elevar al cuadrado</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Hora del servidor</h2>
+    <button id="btn-time">Consultar hora</button>
+  </section>
+
+<section>
+    <h2>Servicio lento (para observar el límite secuencial)</h2>
+    <button id="btn-slow">Servicio lento (8 s)</button>
+  </section>
+
+  <div id="result" class="box">Los resultados aparecerán aquí.</div>
+  <div id="error" class="box error" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
